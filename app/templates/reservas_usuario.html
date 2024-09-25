@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block conte %}
+<h1>minhas reservas</h1>
+{% if reservas %}
+    <table>
+        <thead>
+            <tr>
+                <th>Veiculo</th>
+                <th>data do inicio</th>
+                <th>data do fim</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reserva in reservas %}
+                <tr>
+                    <td>{{ reserva.Veicles.Marca }}</td>
+                    <td>{{ reserva.inicio }}</td>
+                    <td>{{ reserva.fim }}</td>
+                    <td>{{ reserva.estado }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>tu nem tem reserva</p>
+{% endif %}
+{% endblock %}
